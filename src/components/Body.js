@@ -8,7 +8,7 @@ export default class Body extends React.Component {
         return (
             <div id="body">
                 <div id="body-banner">
-                    <h4>这是body中的banner</h4>
+                    <img src={require('../../public/images/code.png')} alt=""/>
                 </div>
                 <div id="body-main">
                     {this.props.children}

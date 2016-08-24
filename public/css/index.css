@@ -1,3 +1,19 @@
+#header{
+    width: 100%;
+    height: auto;
+    background-color: #00d4b4;
+}
+#body{
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    background-color: #0b97c4;
+}
+#footer{
+    width: 100%;
+    height: 50px;
+    background-color: #2a6496;
+}
 .menu-item-p-now{
     background-color: red;
     width: 200px;
