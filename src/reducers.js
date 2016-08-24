@@ -51,11 +51,23 @@ function asyncReducer(state = {}, action) {
     }
 }
 
+function menuReducer(state = {now: 1}, action) {
+    switch (action.type) {
+        case 'MENU_CUT':
+            return {
+                now: action.now
+            };
+        default:
+            return state;
+    }
+}
+
 
 const reducers = combineReducers({
     user: userReducer,
     items: itemsReducer,
-    async: asyncReducer
+    async: asyncReducer,
+    menu: menuReducer
 });
 
 export default reducers;

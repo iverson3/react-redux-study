@@ -29,3 +29,12 @@ export function asyncAction_1(message) {
         }, 3000);
     }
 }
+
+
+
+export function menuCut(menuid) {
+    return {
+        type: 'MENU_CUT',
+        now: menuid
+    };
+}
