@@ -38,3 +38,17 @@ export function menuCut(menuid) {
         now: menuid
     };
 }
+
+
+export function addBook(book) {
+    return {
+        type: "ADD_BOOK",
+        book: book
+    };
+}
+export function deleteBook(id) {
+    return {
+        type: "DELETE_BOOK",
+        bookid: id
+    };
+}
