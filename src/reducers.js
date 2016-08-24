@@ -62,12 +62,39 @@ function menuReducer(state = {now: 1}, action) {
     }
 }
 
+// bookList = [{id: 1, name: 'big bom', author: 'stefan'}, {id: 2, name: 'design pattern', author: 'jeff'}]
+function bookReducer(state = {bookList: [{id: 1, name: 'big bom', author: 'stefan'}], bookType: '', maxId: 1}, action) {
+    switch (action.type) {
+        case 'ADD_BOOK':
+            return {
+                bookList: [...state.bookList, action.book],
+                bookType: state.bookType,
+                maxId: state.maxId
+            };
+        case 'DELETE_BOOK':
+            let books = [];
+            state.bookList.map(function (res, index) {
+                if (res.id !== action.bookid) {
+                    books.push(res);
+                }
+            });
+            return {
+                bookList: books,
+                bookType: state.bookType,
+                maxId: state.maxId
+            };
+        default:
+            return state;
+    }
+}
+
 
 const reducers = combineReducers({
     user: userReducer,
     items: itemsReducer,
     async: asyncReducer,
-    menu: menuReducer
+    menu: menuReducer,
+    book: bookReducer
 });
 
 export default reducers;

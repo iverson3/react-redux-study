@@ -11,6 +11,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 import Index from './components/Index'
 import Login from './components/Login'
 import Blog from './components/Blog'
+import AddBook from './components/AddBook'
 import reducers from './reducers'
 // import {setName, addItem, asyncAction_1} from './actions'
 import callTraceMiddleware from './middlewares/callTraceMiddleware'
@@ -57,6 +58,7 @@ render((
             <Route path="/" component={Index} />
             <Route path="/login" component={Login} />
             <Route path="/blog" component={Blog} />
+            <Route path="/add-book" component={AddBook} />
         </Router>
     </Provider>),
     document.getElementById('App')
