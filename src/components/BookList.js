@@ -8,7 +8,8 @@ export default class BookList extends React.Component {
     render() {
         let books = this.props.bookList.map(function (res, index) {
             return (
-                <li key={index} no={res.id}><span>{res.name}</span> <span onClick={this.props.onDeleteBook.bind(this, res.id)}>[delete]</span></li>
+                <li key={index} no={res.id}><span>{res.name}</span> <span onClick={this.props.onDeleteBook.bind(this, res.id)}>[<a
+                    href="javascript:;">delete</a>]</span></li>
             );
         }.bind(this));
         return (

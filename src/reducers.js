@@ -62,8 +62,8 @@ function menuReducer(state = {now: 1}, action) {
     }
 }
 
-// bookList = [{id: 1, name: 'big bom', author: 'stefan'}, {id: 2, name: 'design pattern', author: 'jeff'}]
-function bookReducer(state = {bookList: [{id: 1, name: 'big bom', author: 'stefan'}], bookType: '', maxId: 1}, action) {
+const bookInitState = {bookList: [{id: 1, name: 'big bom', author: 'stefan'}], bookType: '', maxId: 1};
+function bookReducer(state = bookInitState, action) {
     switch (action.type) {
         case 'ADD_BOOK':
             return Object.assign({}, state, {bookList: [...state.bookList, action.book]});

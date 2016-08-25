@@ -23,7 +23,8 @@ import callTraceMiddleware from './middlewares/callTraceMiddleware'
 // let store = createStore(reducers);
 
 // 使用中间件thunkMiddleware callTraceMiddleware
-const finalCreateStore = applyMiddleware(thunkMiddleware, callTraceMiddleware)(createStore);
+let middleWares = [thunkMiddleware, callTraceMiddleware];
+const finalCreateStore = applyMiddleware(...middleWares)(createStore);
 let store = finalCreateStore(reducers);
 
 
