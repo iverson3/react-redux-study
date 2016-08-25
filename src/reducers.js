@@ -66,11 +66,7 @@ function menuReducer(state = {now: 1}, action) {
 function bookReducer(state = {bookList: [{id: 1, name: 'big bom', author: 'stefan'}], bookType: '', maxId: 1}, action) {
     switch (action.type) {
         case 'ADD_BOOK':
-            return {
-                bookList: [...state.bookList, action.book],
-                bookType: state.bookType,
-                maxId: state.maxId
-            };
+            return Object.assign({}, state, {bookList: [...state.bookList, action.book]});
         case 'DELETE_BOOK':
             let books = [];
             state.bookList.map(function (res, index) {
@@ -78,11 +74,7 @@ function bookReducer(state = {bookList: [{id: 1, name: 'big bom', author: 'stefa
                     books.push(res);
                 }
             });
-            return {
-                bookList: books,
-                bookType: state.bookType,
-                maxId: state.maxId
-            };
+            return Object.assign({}, state, {bookList: books});
         default:
             return state;
     }
